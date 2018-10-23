@@ -46,6 +46,8 @@ import java.util.concurrent.CopyOnWriteArrayList;
  * instantiating a new object, or to take advantage built in Activity and Fragment lifecycle
  * handling, use the static Glide.load methods with your Fragment or Activity.
  *
+ * 处理请求的管理类
+ *
  * @see Glide#with(android.app.Activity)
  * @see Glide#with(android.support.v4.app.FragmentActivity)
  * @see Glide#with(android.app.Fragment)

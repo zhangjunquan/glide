@@ -32,6 +32,8 @@ import java.util.Map;
 /**
  * A collection of static methods for creating new {@link com.bumptech.glide.RequestManager}s or
  * retrieving existing ones from activities and fragment.
+ *
+ * 生成处理请求管理类的工具类
  */
 public class RequestManagerRetriever implements Handler.Callback {
   @VisibleForTesting
@@ -81,6 +83,11 @@ public class RequestManagerRetriever implements Handler.Callback {
     handler = new Handler(Looper.getMainLooper(), this /* Callback */);
   }
 
+  /**
+   * 单例：获取 RequestManager
+   * @param context
+   * @return
+   */
   @NonNull
   private RequestManager getApplicationManager(@NonNull Context context) {
     // Either an application context or we're on a background thread.
@@ -111,7 +118,7 @@ public class RequestManagerRetriever implements Handler.Callback {
   public RequestManager get(@NonNull Context context) {
     if (context == null) {
       throw new IllegalArgumentException("You cannot start a load on a null Context");
-    } else if (Util.isOnMainThread() && !(context instanceof Application)) {
+    } else if (Util.isOnMainThread() && !(context instanceof Application)) {// 如果是主线程 & 不是 Application
       if (context instanceof FragmentActivity) {
         return get((FragmentActivity) context);
       } else if (context instanceof Activity) {
