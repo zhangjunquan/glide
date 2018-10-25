@@ -158,9 +158,9 @@ public class RequestManagerRetriever implements Handler.Callback {
   @SuppressWarnings("deprecation")
   @NonNull
   public RequestManager get(@NonNull Activity activity) {
-    if (Util.isOnBackgroundThread()) {
+    if (Util.isOnBackgroundThread()) {//后台线程（异步线程）
       return get(activity.getApplicationContext());
-    } else {
+    } else {// 主线程
       assertNotDestroyed(activity);
       android.app.FragmentManager fm = activity.getFragmentManager();
       return fragmentGet(
@@ -394,7 +394,7 @@ public class RequestManagerRetriever implements Handler.Callback {
       requestManager =
           factory.build(
               glide, current.getGlideLifecycle(), current.getRequestManagerTreeNode(), context);
-      current.setRequestManager(requestManager);
+      current.setRequestManager(requestManager);// 将空的监听生命周期的fragment和当前的加载实例RequestManager绑定在一起，fragment和manager是一对一的关系
     }
     return requestManager;
   }

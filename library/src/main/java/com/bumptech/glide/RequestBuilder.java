@@ -42,6 +42,8 @@ import java.util.List;
 /**
  * A generic class that can handle setting options and staring loads for generic resource types.
  *
+ * 图片加载请求类
+ *
  * @param <TranscodeType> The type of resource that will be delivered to the
  * {@link com.bumptech.glide.request.target.Target}.
  */

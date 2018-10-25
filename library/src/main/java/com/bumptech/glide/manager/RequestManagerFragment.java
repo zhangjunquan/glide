@@ -21,6 +21,10 @@ import java.util.Set;
  * com.bumptech.glide.RequestManager} that can be used to start, stop and manage Glide requests
  * started for targets the fragment or activity this fragment is a child of.
  *
+ * Activity中添加fragment，可以添加有界面的fragment和无界面的fragment。
+ *
+ * 该fragment是没有界面的fragment，监听Activity的生命周期
+ *
  * @see com.bumptech.glide.manager.SupportRequestManagerFragment
  * @see com.bumptech.glide.manager.RequestManagerRetriever
  * @see com.bumptech.glide.RequestManager
